@@ -1,0 +1,78 @@
+{{ 'meet-the-team.css' | asset_url | stylesheet_tag }}
+
+
+
+<div class="meet-the-team-section">
+  <div class="container">
+    <h2>{{ section.settings.section_title }}</h2>
+    <p>{{ section.settings.section_description }}</p>
+    <div class="team-members">
+      {% for block in section.blocks %}
+        <div class="team-member">
+          {% if block.settings.member_photo %}
+            <img src="{{ block.settings.member_photo | img_url: 'medium' }}" alt="{{ block.settings.member_name }}">
+          {% endif %}
+          <h3>{{ block.settings.member_name }}</h3>
+          <h4>{{ block.settings.member_role }}</h4>
+          <p>{{ block.settings.member_bio }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+
+
+
+{% schema %}
+{"name": "Meet the Team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Meet the Team"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Get to know the amazing people behind our company."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "member_photo",
+          "label": "Member Photo"
+        },
+        {
+          "type": "text",
+          "id": "member_name",
+          "label": "Member Name"
+        },
+        {
+          "type": "text",
+          "id": "member_role",
+          "label": "Member Role"
+        },
+        {
+          "type": "textarea",
+          "id": "member_bio",
+          "label": "Member Bio"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Meet the Team Section",
+      "category": "About Us"
+    }
+  ]
+}
+{% endschema %}

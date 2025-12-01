@@ -1,0 +1,2 @@
+[environments.development]
+store = 'https://admin.shopify.com/store/meet-the-team'
