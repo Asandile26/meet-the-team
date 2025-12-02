@@ -10,7 +10,13 @@
       {% for block in section.blocks %}
         <div class="team-member">
           {% if block.settings.member_photo %}
-            <img src="{{ block.settings.member_photo | img_url: 'medium' }}" alt="{{ block.settings.member_name }}">
+            <img 
+                src="{{ block.settings.member_photo | img_url: '320x320' }}" 
+                alt="{{ block.settings.member_name }}" 
+                loading="lazy"
+                width="320"  
+                height="320" 
+              >
           {% endif %}
           <h3>{{ block.settings.member_name }}</h3>
           <h4>{{ block.settings.member_role }}</h4>

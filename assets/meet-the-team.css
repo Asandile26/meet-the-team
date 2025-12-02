@@ -1,14 +1,16 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
 .meet-the-team-section {
-  padding: 3rem 1.5rem; /* Padding top/bottom and left/right */
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .team-members {
-  /* Define the grid container for all team members */
   display: grid;
-  /* By default (mobile), stack members vertically in one column */
   grid-template-columns: 1fr;
-  gap: 3rem; /* Spacing between rows and columns */
+  gap: 3rem;
   margin-top: 2rem;
 }
 
@@ -16,33 +18,37 @@
   text-align: center;
 }
 
+.team-member h3 h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+}
+.team-member p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
 .team-member img {
-  /* Ensure photos fill their container and look crisp */
   width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 320px;
   object-fit: cover;
-  border-radius: 12px; /* Add some rounded corners */
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
-/*
- * 2. Desktop/Tablet Styles (Media Query)
- * This is the 'Beauty' that makes it responsive
- */
 @media screen and (min-width: 768px) {
   .team-members {
-    /* On screens wider than 768px (tablet/desktop), use 3 columns */
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 }
-.team-member h3 {
+.team-member h3 h4 {
   margin: 0.5rem 0 0.25rem 0;
   font-size: 1.25rem;
 }
 .team-member p {
   margin: 0;
   color: #666;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
